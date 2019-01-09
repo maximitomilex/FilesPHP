@@ -14,11 +14,11 @@
         	$this->con= new Conexion();
         }
 
-        public set($atributo, $valor){
-        	$this->$atributo=$valor;
+        public function set($atributo, $valor){
+        	$this->$atributo = $valor;
         }
 
-        public get($atributo){
+        public function get($atributo){
         	return $this->$atributo;
         }
 
@@ -40,16 +40,16 @@
         public function view(){
         	$sql="SELECT * FROM Personas;";
         	$datos = $this->con->consultaRetorno($sql);
-        	return $datos;
+            $row = mysqli_fetch_assoc($datos);
+        	return $row;
         }
 
         public function viewWhere($column, $valor){
         	$sql="SELECT * FROM Personas WHERE ".$column."="."'{$valor}';";
         	$datos=$this->con->consultaRetorno($sql);
-        	return $datos;
+            $row = mysqli_fetch_assoc($datos);
+        	return $row;
         }
-
-
    }
 
 ?>
