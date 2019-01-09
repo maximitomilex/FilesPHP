@@ -19,7 +19,8 @@
         }
 
         public function consultaRetorno($sql){
-        	return $this->con->query($sql);
+            $datos=$this->con->query($sql);
+            return $datos;
         }
 
     }
