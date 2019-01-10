@@ -29,15 +29,10 @@
                     $this->persona->set("imagen", $nombre);
                     $this->persona->add();
                 }
-                
-
            }
      
          } 
-
-
-         
-         
+     
     }
 
 ?>
